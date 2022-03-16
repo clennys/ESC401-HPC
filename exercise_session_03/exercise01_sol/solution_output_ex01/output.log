@@ -1,0 +1,91 @@
+Process rank: 12
+GET_TIME: Computed in 0.05913 seconds
+Process rank: 14
+GET_TIME: Computed in 0.05912 seconds
+Process rank: 28
+GET_TIME: Computed in 0.05919 seconds
+Process rank: 30
+GET_TIME: Computed in 0.05916 seconds
+Process rank: 0
+MPI_TIME pi is approximately 3.1415926555898399, Error is 0.0000000020000468
+Computed in 0.04881 seconds
+GET_TIME: Computed in 0.05939 seconds
+Process rank: 1
+GET_TIME: Computed in 0.05924 seconds
+Process rank: 2
+GET_TIME: Computed in 0.05919 seconds
+Process rank: 3
+GET_TIME: Computed in 0.05917 seconds
+Process rank: 4
+GET_TIME: Computed in 0.05925 seconds
+Process rank: 5
+GET_TIME: Computed in 0.05924 seconds
+Process rank: 6
+GET_TIME: Computed in 0.0592 seconds
+Process rank: 7
+GET_TIME: Computed in 0.05935 seconds
+Process rank: 8
+GET_TIME: Computed in 0.05926 seconds
+Process rank: 9
+GET_TIME: Computed in 0.0592 seconds
+Process rank: 10
+GET_TIME: Computed in 0.05923 seconds
+Process rank: 11
+GET_TIME: Computed in 0.05929 seconds
+Process rank: 13
+GET_TIME: Computed in 0.05924 seconds
+Process rank: 15
+GET_TIME: Computed in 0.05923 seconds
+Process rank: 16
+GET_TIME: Computed in 0.05918 seconds
+Process rank: 17
+GET_TIME: Computed in 0.05925 seconds
+Process rank: 18
+GET_TIME: Computed in 0.05923 seconds
+Process rank: 19
+GET_TIME: Computed in 0.05928 seconds
+Process rank: 20
+GET_TIME: Computed in 0.05919 seconds
+Process rank: 21
+GET_TIME: Computed in 0.05927 seconds
+Process rank: 22
+GET_TIME: Computed in 0.05926 seconds
+Process rank: 23
+GET_TIME: Computed in 0.05927 seconds
+Process rank: 24
+GET_TIME: Computed in 0.05924 seconds
+Process rank: 25
+GET_TIME: Computed in 0.05916 seconds
+Process rank: 26
+GET_TIME: Computed in 0.05924 seconds
+Process rank: 27
+GET_TIME: Computed in 0.05917 seconds
+Process rank: 29
+GET_TIME: Computed in 0.05926 seconds
+Process rank: 31
+GET_TIME: Computed in 0.05928 seconds
+Process rank: 32
+GET_TIME: Computed in 0.05926 seconds
+Process rank: 33
+GET_TIME: Computed in 0.0592 seconds
+Process rank: 34
+GET_TIME: Computed in 0.05923 seconds
+Process rank: 35
+GET_TIME: Computed in 0.05924 seconds
+
+
+Batch Job Summary Report (version 21.01.1) for Job "hpc_omp" (37112660) on daint
+
+Job information (1/2)
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed Time limit
+------------------- ------------------- ------------------- ------------------- ---------- ----------
+2022-03-11T14:57:21 2022-03-11T14:57:21 2022-03-11T15:06:01 2022-03-11T15:06:32   00:00:31   00:05:00
+-----------------------------------------------------------------------------------------------------
+
+Job information (2/2)
+-------------------------------------------------------------
+    Username      Account    Partition   NNodes        Energy
+------------ ------------ ------------ -------- -------------
+     hdennys         uzh8        debug        1      0.789 kJ
+

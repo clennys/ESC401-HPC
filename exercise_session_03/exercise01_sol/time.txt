@@ -1,0 +1,12 @@
+-O0:
+sum=10022429073.341873
+Computed in 6.402 seconds
+-O1:
+sum=10022429073.341873
+Computed in 1.489 seconds
+-O2:
+sum=10022429073.341873
+Computed in 1.441 seconds
+-03:
+sum=10022429073.341873
+Computed in 1.429 seconds
