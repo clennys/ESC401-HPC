@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-core=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=20
 #SBATCH --partition=debug
 #SBATCH --constraint=mc
 #SBATCH --hint=nomultithread
