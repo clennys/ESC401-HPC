@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ ! $# -eq 1 ]]; then
+	echo "Invalid Input!"
+	exit 1
+fi
+
+iscomposite='[0-9]+: [0-9]+ [0-9]+.*'
+isone='^1:'
+
+factoring=$(factor $1)
+
+if [[ $factoring =~ $iscomposite ]]; then
+	echo "$1 is composite!"
+elif [[ $factoring =~ $isone ]]; then
+	echo "$1 is not composite nor prime"
+else
+	echo "$1 is prime!"
+fi

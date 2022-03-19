@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ ! $# -eq 1 ]]; then
+	echo "Invalid Input!"
+	exit 1
+fi
+
+factoring=$(factor $1 | wc -w)
+
+if [[ $factoring -gt 2 ]]; then
+	echo "$1 is composite!"
+elif [[ $factoring -lt 2 ]]; then
+	echo "$1 is not composite nor prime"
+else
+	echo "$1 is prime!"
+fi
