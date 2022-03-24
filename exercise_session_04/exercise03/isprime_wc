@@ -1,5 +1,6 @@
 #!/bin/bash
 
+start=`date +%s.%N`
 if [[ ! $# -eq 1 ]]; then
 	echo "Invalid Input!"
 	exit 1
@@ -14,3 +15,8 @@ elif [[ $factoring -lt 2 ]]; then
 else
 	echo "$1 is prime!"
 fi
+end=`date +%s.%N`
+
+runtime=$( echo "$end - $start" | bc -l )
+
+echo "Runtime: $runtime seconds"
