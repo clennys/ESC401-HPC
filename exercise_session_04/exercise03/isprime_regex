@@ -1,10 +1,6 @@
 #!/bin/bash
 
 start=`date +%s.%N`
-if [[ ! $# -eq 1 ]]; then
-	echo "Invalid Input!"
-	exit 1
-fi
 
 iscomposite='[0-9]+: [0-9]+ [0-9]+.*'
 isone='^1:'
