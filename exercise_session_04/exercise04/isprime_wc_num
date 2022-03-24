@@ -2,7 +2,14 @@
 
 start=`date +%s.%N`
 
+re='^[0-9]+$'
+
 while test -n "$1"; do
+	if ! [[ $1 =~ $re ]] ; then
+	   echo "error: $1 Not an integer" >&2
+	   shift
+	   continue
+	fi
 	factoring=$(factor $1 | wc -w)
 
 	if [[ $factoring -gt 2 ]]; then

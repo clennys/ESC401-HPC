@@ -2,6 +2,20 @@
 
 start=`date +%s.%N`
 
+if [[ ! $# -eq 2 ]]; then
+	echo "error: Not correct amount of arguments" >&2; exit 1
+	exit 1
+fi
+
+re='^[0-9]+$'
+if ! [[ $1 =~ $re ]] ; then
+   echo "error: First argument not an integer" >&2; exit 1
+fi
+
+if ! [[ $2 =~ $re ]] ; then
+   echo "error: Second argument not an integer" >&2; exit 1
+fi
+
 for i in $(seq $1 $2); do
 	factoring=$(factor $i | wc -w)
 
