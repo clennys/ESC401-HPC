@@ -1,0 +1,16 @@
+#!/bin/bash
+
+start=`date +%s.%N`
+
+for i in $(seq $1 $2); do
+	factoring=$(factor $i | wc -w)
+
+	if [[ $factoring -eq 2 ]]; then
+		echo "$i is prime!"
+	fi
+done
+end=`date +%s.%N`
+
+runtime=$( echo "$end - $start" | bc -l )
+
+echo "Runtime: $runtime seconds"

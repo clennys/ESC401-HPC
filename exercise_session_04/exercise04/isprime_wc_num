@@ -1,0 +1,21 @@
+#!/bin/bash
+
+start=`date +%s.%N`
+
+while test -n "$1"; do
+	factoring=$(factor $1 | wc -w)
+
+	if [[ $factoring -gt 2 ]]; then
+		echo "$1 is composite!"
+	elif [[ $factoring -lt 2 ]]; then
+		echo "$1 is not composite nor prime"
+	else
+		echo "$1 is prime!"
+	fi
+	shift
+done
+end=`date +%s.%N`
+
+runtime=$( echo "$end - $start" | bc -l )
+
+echo "Runtime: $runtime seconds"
