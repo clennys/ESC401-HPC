@@ -58,7 +58,7 @@ int main(int argc, char *argv[]){
 
     // first loop
     int maxval = 0;
-	#pragma omp parallel default(none)
+	#pragma omp parallel
 	{
 		for (int i=0;i<num_size;i++) if (numbers[i] > maxval) maxval = numbers[i];
 	}
