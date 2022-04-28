@@ -30,7 +30,7 @@ int main (int argc, char *argv[])
 
 	if (rank == 0) {
 		approx_pi *= 4;
-		printf("Approximation of pi with %ld iterations: %lf", N, approx_pi);
+		printf("Approximation of pi with %ld iterations: %.10f", N, approx_pi);
 	}
 
 	MPI_Finalize();
