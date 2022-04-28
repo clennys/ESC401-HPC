@@ -21,12 +21,38 @@ int mpi_get_domain(int nx, int ny, int my_rank, int size, int* min_x, int* max_x
 	define corners or local domains
 	*/
 
+	// I
 	int slice = nx/size;
 	*min_x = my_rank * slice;
 	*max_x = (my_rank == size - 1) ? nx : slice + *min_x;
 
 	*max_y = ny;
 	*min_y = 0;
+
+// // II
+	// int remnant = nx % size;
+	//
+ //    *min_x = (my_rank < remnant) ? (slice+1) * my_rank : (slice+1)*remnant+slice*(my_rank-remnant);
+ //    *max_x = (my_rank < remnant) ? *min_x + slice+1 : *min_x + slice;
+	// *max_y = ny;
+	// *min_y = 0;
+
+// // III
+// MPI_Comm_size(MPI_COMM_WORLD, &size);
+//
+ //    // Ask MPI to decompose our processes in a 2D cartesian grid for us
+ //    int dims[2] = {0, 0};
+ //    MPI_Dims_create(size, 2, dims);
+	//
+ //    // Make both dimensions periodic
+ //    int periods[2] = {true, true};
+	//
+ //    // Let MPI assign arbitrary ranks if it deems it necessary
+ //    int reorder = true;
+	//
+ //    // Create a communicator given the 2D torus topology.
+ //    MPI_Comm new_communicator;
+ //    MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &new_communicator);
 
 	printf("I am rank %d and my domain is: xmin, xmax, ymin, ymax: %d %d %d %d\n",my_rank,*min_x,*max_x,*min_y,*max_y);
 	return 0;
