@@ -37,57 +37,26 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
 	/*this function, vectors fromLeft and fromRight should be received from the neighbours of my_rank process*/
 	/*if you want to implement also cartesian topology, you need fromTop and fromBottom in addition to fromLeft a
 	nd fromRight*/
+
 	for (int j=0;j<(p.ymax - p.ymin);j++) {fromLeft[j] = 0; fromRight[j] = 0;} //initialize fromLeft and fromRight
-	
-	double* sendRight = new double [p.ymax - p.ymin];
-	for (int j=0;j<(p.ymax - p.ymin);j++) sendRight[j] = u[p.xmax - p.xmin - 1][j];
-	double* sendLeft = new double [p.ymax - p.ymin];
-	for (int j=0;j<(p.ymax - p.ymin);j++) sendLeft[j] = u[0][j];
-
-
 
     /* define columns to be sent to right neighbour and to the left neighbour, 
     also receive one both form left and right neighbour*/
-	if (my_rank%2 == 0)
-	{
-		if (my_rank	!= size - 1)
-		{
-			MPI_Ssend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD); 
+	if (my_rank != 0){
+		double sendRight[p.ymax - p.ymin];
+		for (int i = 0; i < (p.ymax - p.ymin); i++) {
+			sendRight[i] = u[i][p.xmax];
 		}
-		if( my_rank != 0)
-		{
-			MPI_Ssend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD);
-		}
-	}
-	else{
-		if(my_rank != 0){
-			MPI_Recv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-		if(my_rank != size - 1){
-			MPI_Recv(&fromRight, p.ymax - p.ymin, MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
+		MPI_Ssend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD); 
+
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
-
-	if (my_rank%2 == 1)
-	{
-		if (my_rank	!= size - 1)
-		{
-			MPI_Ssend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD); 
+	if (my_rank != size - 1){
+		double sendLeft[p.ymax - p.ymin];
+		for (int i = 0; i < (p.ymax - p.ymin); i++) {
+			sendLeft[i] = u[i][p.xmin];
 		}
-		if( my_rank != 0)
-		{
-			MPI_Ssend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD);
-		}
-	}
-	else{
-		if(my_rank != 0){
-			MPI_Recv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-		if(my_rank != size - 1){
-			MPI_Recv(&fromRight, p.ymax - p.ymin, MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
+		MPI_Ssend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD); 
 	}
 
     /* choose either to define MPIcolumn_type (lines 43-45) or define 
