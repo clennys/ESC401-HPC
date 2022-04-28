@@ -59,7 +59,18 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
 		MPI_Irecv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, &reqs[2]);
 		MPI_Isend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, &reqs[3]);
 	}
+	if(my_rank == 0){
+		MPI_Wait(&reqs[0], MPI_STATUS_IGNORE);
+		MPI_Wait(&reqs[1], MPI_STATUS_IGNORE);
+
+	}
+	else if(my_rank == size-1){
+		MPI_Wait(&reqs[2], MPI_STATUS_IGNORE);
+		MPI_Wait(&reqs[3], MPI_STATUS_IGNORE);
+	}
+	else{
 		MPI_Waitall(4, reqs, MPI_STATUS_IGNORE);
+	}
 
     /* choose either to define MPIcolumn_type (lines 43-45) or define 
     the columns to be sent manually (lines 53-56)*/

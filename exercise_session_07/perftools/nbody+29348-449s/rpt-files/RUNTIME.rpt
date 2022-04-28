@@ -1,0 +1,145 @@
+
+#################################################################
+#                                                               #
+#            CrayPat-lite Performance Statistics                #
+#                                                               #
+#################################################################
+
+CrayPat/X:  Version 21.09.0 Revision b02949528  08/17/21 03:14:02
+Experiment:                  lite  lite-samples
+Number of PEs (MPI ranks):      1
+Numbers of PEs per Node:        1
+Numbers of Threads per PE:      1
+Number of Cores per Socket:    18
+Execution start time:  Thu Apr 28 16:11:28 2022
+System name and speed:  nid00449  2.316 GHz (nominal)
+Intel Broadwell            CPU  Family:  6  Model: 79  Stepping:  1
+DRAM:  64 GiB DDR4-2133 on 2.1 GHz nodes
+
+
+
+Avg Process Time:          8.92 secs         
+High Memory:               51.4 MiBytes 51.4 MiBytes per PE
+Observed CPU clock boost: 156.6 %      
+Percent cycles stalled:    19.4 %      
+Instr per Cycle:           2.06
+
+Notes for table 1:
+
+  This table shows functions that have significant exclusive sample
+    hits, averaged across ranks.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O samp_profile ...
+
+Table 1:  Profile by Function
+
+  Samp% |  Samp | Imb. |  Imb. | Group
+        |       | Samp | Samp% |  Function=[MAX10]
+       
+ 100.0% | 882.0 |   -- |    -- | Total
+|---------------------------------------------------------
+| 100.0% | 882.0 |   -- |    -- | USER
+||--------------------------------------------------------
+||  74.0% | 653.0 |   -- |    -- | forces
+||  26.0% | 229.0 |   -- |    -- | std::vector<>::operator[]
+|=========================================================
+
+Notes for table 2:
+
+  This table shows functions, and line numbers within functions, that
+    have significant exclusive sample hits, averaged across ranks.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O samp_profile+src ...
+
+Table 2:  Profile by Group, Function, and Line
+
+  Samp% |  Samp | Imb. |  Imb. | Group
+        |       | Samp | Samp% |  Function=[MAX10]
+        |       |      |       |   Source
+        |       |      |       |    Line
+       
+ 100.0% | 882.0 |   -- |    -- | Total
+|-----------------------------------------------------------------------------
+| 100.0% | 882.0 |   -- |    -- | USER
+||----------------------------------------------------------------------------
+||  74.0% | 653.0 |   -- |    -- | forces
+3|        |       |      |       |  hpc_esc_401_solutions/exercise_session_07/perftools/nbody.cpp
+||||--------------------------------------------------------------------------
+4|||   4.3% |  38.0 |   -- |    -- | line.18
+4|||   5.1% |  45.0 |   -- |    -- | line.19
+4|||   3.5% |  31.0 |   -- |    -- | line.20
+4|||   2.7% |  24.0 |   -- |    -- | line.21
+4|||   9.4% |  83.0 |   -- |    -- | line.22
+4|||  37.8% | 333.0 |   -- |    -- | line.23
+4|||   5.7% |  50.0 |   -- |    -- | line.24
+4|||   5.6% |  49.0 |   -- |    -- | line.25
+||||==========================================================================
+||  26.0% | 229.0 |   -- |    -- | std::vector<>::operator[]
+3|        |       |      |       |  include/g++/bits/stl_vector.h
+||||--------------------------------------------------------------------------
+4|||   8.7% |  77.0 |   -- |    -- | line.931
+4|||  17.2% | 152.0 |   -- |    -- | line.933
+|=============================================================================
+
+Observation:  MPI utilization
+
+    No suggestions were made because each node has only one rank.
+
+
+Observation:  Program sensitivity to memory latency
+
+    This program did not appear to be limited by memory latency
+    throughout its entire execution, though individual functions or
+    regions might be.
+
+
+Notes for table 3:
+
+  This table shows memory traffic for numa nodes, taking for each numa
+    node the maximum value across nodes. It also shows the balance in
+    memory traffic by showing the top 3 and bottom 3 node values.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O mem_bw ...
+
+Table 3:  Memory Bandwidth by Numanode
+
+   Memory |    Local |   Remote |   Thread |  Memory |  Memory | Numanode
+  Traffic |   Memory |   Memory |     Time | Traffic | Traffic | 
+   GBytes |  Traffic |  Traffic |          |  GBytes |       / | 
+          |   GBytes |   GBytes |          |   / Sec | Nominal | 
+          |          |          |          |         |    Peak | 
+|--------------------------------------------------------------------------
+|     0.00 |     0.00 |     0.00 | 8.892473 |    0.00 |    0.0% | numanode.0
+|==========================================================================
+
+Notes for table 4:
+
+  This table shows energy and power usage for the nodes with the
+    maximum, mean, and minimum usage, as well as the sum of usage over
+    all nodes.
+    Energy and power for accelerators is also shown, if applicable.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O program_energy ...
+
+Table 4:  Program energy and power usage (from Cray PM)
+
+   Node |     Node |  Process | Total
+ Energy |    Power |     Time | 
+    (J) |      (W) |          | 
+-------------------------------------
+    976 |  109.464 | 8.916206 | Total
+=====================================
+Program invocation:  nbody
+
+For a complete report with expanded tables and notes, run:
+  pat_report /scratch/snx3000/hdennys/nbody+29348-449s
+
+For help identifying callers of particular functions:
+  pat_report -O callers+src /scratch/snx3000/hdennys/nbody+29348-449s
+To see the entire call tree:
+  pat_report -O calltree+src /scratch/snx3000/hdennys/nbody+29348-449s
+
+For interactive, graphical performance analysis, run:
+  app2 /scratch/snx3000/hdennys/nbody+29348-449s
+
+================  End of CrayPat-lite output  ==========================
