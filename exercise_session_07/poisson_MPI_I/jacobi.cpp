@@ -21,6 +21,7 @@ double norm_diff(params p, double** mat1, double** mat2){
             ret += diff*diff;
         }
     }
+	ALLREDUCE(&diff, &ret);
     ret = sqrt(ret/(p.nx*p.ny));
     return ret;
 }
