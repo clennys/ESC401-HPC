@@ -45,50 +45,21 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
 	for (int j=0;j<(p.ymax - p.ymin);j++) sendLeft[j] = u[0][j];
 
 
+	MPI_Request reqs [4];
 
     /* define columns to be sent to right neighbour and to the left neighbour, 
     also receive one both form left and right neighbour*/
-	if (my_rank%2 == 0)
+	if (my_rank	!= size - 1)
 	{
-		if (my_rank	!= size - 1)
-		{
-			MPI_Ssend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD); 
-		}
-		if( my_rank != 0)
-		{
-			MPI_Ssend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD);
-		}
+		MPI_Irecv(&fromRight, p.ymax - p.ymin, MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, &reqs[0]);
+		MPI_Isend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, &reqs[1]); 
 	}
-	else{
-		if(my_rank != 0){
-			MPI_Recv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-		if(my_rank != size - 1){
-			MPI_Recv(&fromRight, p.ymax - p.ymin, MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-	}
-
-	MPI_Barrier(MPI_COMM_WORLD);
-
-	if (my_rank%2 == 1)
+	if( my_rank != 0)
 	{
-		if (my_rank	!= size - 1)
-		{
-			MPI_Ssend(&sendRight, p.ymax - p.ymin , MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD); 
-		}
-		if( my_rank != 0)
-		{
-			MPI_Ssend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD);
-		}
+		MPI_Irecv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, &reqs[2]);
+		MPI_Isend(&sendLeft, p.ymax - p.ymin , MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, &reqs[3]);
 	}
-	else{
-		if(my_rank != 0){
-			MPI_Recv(&fromLeft, p.ymax - p.ymin, MPI_DOUBLE, my_rank - 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-		if(my_rank != size - 1){
-			MPI_Recv(&fromRight, p.ymax - p.ymin, MPI_DOUBLE, my_rank + 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		}
-	}
+		MPI_Waitall(4, reqs, MPI_STATUS_IGNORE);
 
     /* choose either to define MPIcolumn_type (lines 43-45) or define 
     the columns to be sent manually (lines 53-56)*/
