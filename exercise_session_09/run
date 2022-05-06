@@ -1,0 +1,10 @@
+#!/bin/bash
+for i in *.csv; do
+    [ -f "$i" ] || break
+    cat $i | ./mapper.py >> map.txt
+done
+cat map.txt | sort > sort.txt
+cat sort.txt | ./reducer.py > output.txt
+
+rm map.txt sort.txt
+
