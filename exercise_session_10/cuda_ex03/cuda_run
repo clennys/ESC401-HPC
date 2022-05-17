@@ -1,0 +1,13 @@
+#!/bin/bash
+
+NUM_BLOCK=(60 120 180 240 300 360 420 600)
+NUM_THREAD=(16 32 48 64 80 96 112 128 144 160)
+
+for i in ${NUM_BLOCK[@]}
+do
+	for j in ${NUM_THREAD[@]}
+	do
+		./cpi_cuda $i $j
+	done
+done
+
