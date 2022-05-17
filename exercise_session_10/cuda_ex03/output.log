@@ -1,0 +1,106 @@
+Using 60 Blocks and 16 threads, PI = 3.141592653589794 computed in 0.1629 seconds
+Using 60 Blocks and 32 threads, PI = 3.141592653589793 computed in 0.07212 seconds
+Using 60 Blocks and 48 threads, PI = 3.141592653589794 computed in 0.04911 seconds
+Using 60 Blocks and 64 threads, PI = 3.141592653589792 computed in 0.03671 seconds
+Using 60 Blocks and 80 threads, PI = 3.141592653589793 computed in 0.02989 seconds
+Using 60 Blocks and 96 threads, PI = 3.141592653589796 computed in 0.02495 seconds
+Using 60 Blocks and 112 threads, PI = 3.141592653589795 computed in 0.02199 seconds
+Using 60 Blocks and 128 threads, PI = 3.1415926535898 computed in 0.01927 seconds
+Using 60 Blocks and 144 threads, PI = 3.141592653589793 computed in 0.01783 seconds
+Using 60 Blocks and 160 threads, PI = 3.141592653589789 computed in 0.01607 seconds
+Using 120 Blocks and 16 threads, PI = 3.141592653589793 computed in 0.07332 seconds
+Using 120 Blocks and 32 threads, PI = 3.141592653589792 computed in 0.03673 seconds
+Using 120 Blocks and 48 threads, PI = 3.141592653589796 computed in 0.02497 seconds
+Using 120 Blocks and 64 threads, PI = 3.1415926535898 computed in 0.01876 seconds
+Using 120 Blocks and 80 threads, PI = 3.141592653589789 computed in 0.01604 seconds
+Using 120 Blocks and 96 threads, PI = 3.141592653589788 computed in 0.01341 seconds
+Using 120 Blocks and 112 threads, PI = 3.141592653589794 computed in 0.01199 seconds
+Using 120 Blocks and 128 threads, PI = 3.141592653589795 computed in 0.01053 seconds
+Using 120 Blocks and 144 threads, PI = 3.141592653589794 computed in 0.01325 seconds
+Using 120 Blocks and 160 threads, PI = 3.141592653589796 computed in 0.01196 seconds
+Using 180 Blocks and 16 threads, PI = 3.141592653589794 computed in 0.04893 seconds
+Using 180 Blocks and 32 threads, PI = 3.141592653589796 computed in 0.02453 seconds
+Using 180 Blocks and 48 threads, PI = 3.141592653589793 computed in 0.01711 seconds
+Using 180 Blocks and 64 threads, PI = 3.141592653589788 computed in 0.0129 seconds
+Using 180 Blocks and 80 threads, PI = 3.141592653589795 computed in 0.01119 seconds
+Using 180 Blocks and 96 threads, PI = 3.141592653589794 computed in 0.009383 seconds
+Using 180 Blocks and 112 threads, PI = 3.141592653589796 computed in 0.01142 seconds
+Using 180 Blocks and 128 threads, PI = 3.141592653589796 computed in 0.01004 seconds
+Using 180 Blocks and 144 threads, PI = 3.141592653589803 computed in 0.01142 seconds
+Using 180 Blocks and 160 threads, PI = 3.141592653589794 computed in 0.01033 seconds
+Using 240 Blocks and 16 threads, PI = 3.141592653589792 computed in 0.03728 seconds
+Using 240 Blocks and 32 threads, PI = 3.1415926535898 computed in 0.01873 seconds
+Using 240 Blocks and 48 threads, PI = 3.141592653589788 computed in 0.01334 seconds
+Using 240 Blocks and 64 threads, PI = 3.141592653589795 computed in 0.01036 seconds
+Using 240 Blocks and 80 threads, PI = 3.141592653589796 computed in 0.01329 seconds
+Using 240 Blocks and 96 threads, PI = 3.141592653589796 computed in 0.01114 seconds
+Using 240 Blocks and 112 threads, PI = 3.141592653589791 computed in 0.01218 seconds
+Using 240 Blocks and 128 threads, PI = 3.141592653589798 computed in 0.01071 seconds
+Using 240 Blocks and 144 threads, PI = 3.141592653589796 computed in 0.01235 seconds
+Using 240 Blocks and 160 threads, PI = 3.141592653589797 computed in 0.01117 seconds
+Using 300 Blocks and 16 threads, PI = 3.141592653589793 computed in 0.03343 seconds
+Using 300 Blocks and 32 threads, PI = 3.141592653589789 computed in 0.01681 seconds
+Using 300 Blocks and 48 threads, PI = 3.141592653589795 computed in 0.0124 seconds
+Using 300 Blocks and 64 threads, PI = 3.141592653589796 computed in 0.009381 seconds
+Using 300 Blocks and 80 threads, PI = 3.141592653589791 computed in 0.01214 seconds
+Using 300 Blocks and 96 threads, PI = 3.141592653589794 computed in 0.01018 seconds
+Using 300 Blocks and 112 threads, PI = 3.141592653589792 computed in 0.01174 seconds
+Using 300 Blocks and 128 threads, PI = 3.141592653589797 computed in 0.01036 seconds
+Using 300 Blocks and 144 threads, PI = 3.141592653589798 computed in 0.01148 seconds
+Using 300 Blocks and 160 threads, PI = 3.141592653589788 computed in 0.01042 seconds
+Using 360 Blocks and 16 threads, PI = 3.141592653589796 computed in 0.02845 seconds
+Using 360 Blocks and 32 threads, PI = 3.141592653589788 computed in 0.01433 seconds
+Using 360 Blocks and 48 threads, PI = 3.141592653589794 computed in 0.01301 seconds
+Using 360 Blocks and 64 threads, PI = 3.141592653589796 computed in 0.009852 seconds
+Using 360 Blocks and 80 threads, PI = 3.141592653589794 computed in 0.0124 seconds
+Using 360 Blocks and 96 threads, PI = 3.141592653589796 computed in 0.01042 seconds
+Using 360 Blocks and 112 threads, PI = 3.141592653589794 computed in 0.01144 seconds
+Using 360 Blocks and 128 threads, PI = 3.141592653589793 computed in 0.0101 seconds
+Using 360 Blocks and 144 threads, PI = 3.141592653589798 computed in 0.0115 seconds
+Using 360 Blocks and 160 threads, PI = 3.141592653589796 computed in 0.01045 seconds
+Using 420 Blocks and 16 threads, PI = 3.141592653589795 computed in 0.02452 seconds
+Using 420 Blocks and 32 threads, PI = 3.141592653589794 computed in 0.01236 seconds
+Using 420 Blocks and 48 threads, PI = 3.141592653589796 computed in 0.01272 seconds
+Using 420 Blocks and 64 threads, PI = 3.141592653589791 computed in 0.009637 seconds
+Using 420 Blocks and 80 threads, PI = 3.141592653589792 computed in 0.0117 seconds
+Using 420 Blocks and 96 threads, PI = 3.141592653589794 computed in 0.009835 seconds
+Using 420 Blocks and 112 threads, PI = 3.141592653589751 computed in 0.01128 seconds
+Using 420 Blocks and 128 threads, PI = 3.14159265358979 computed in 0.009934 seconds
+Using 420 Blocks and 144 threads, PI = 3.141592653589798 computed in 0.01104 seconds
+Using 420 Blocks and 160 threads, PI = 3.141592653589807 computed in 0.01003 seconds
+Using 600 Blocks and 16 threads, PI = 3.141592653589789 computed in 0.01856 seconds
+Using 600 Blocks and 32 threads, PI = 3.141592653589796 computed in 0.00942 seconds
+Using 600 Blocks and 48 threads, PI = 3.141592653589794 computed in 0.0124 seconds
+Using 600 Blocks and 64 threads, PI = 3.141592653589797 computed in 0.009418 seconds
+Using 600 Blocks and 80 threads, PI = 3.141592653589788 computed in 0.01167 seconds
+Using 600 Blocks and 96 threads, PI = 3.141592653589796 computed in 0.009862 seconds
+Using 600 Blocks and 112 threads, PI = 3.141592653589807 computed in 0.01098 seconds
+Using 600 Blocks and 128 threads, PI = 3.141592653589801 computed in 0.009723 seconds
+Using 600 Blocks and 144 threads, PI = 3.1415926535898 computed in 0.01099 seconds
+Using 600 Blocks and 160 threads, PI = 3.141592653589786 computed in 0.01001 seconds
+
+
+Batch Job Summary Report (version 21.01.1) for Job "cpi_cuda_blocks_and_threads" (38505894) on daint
+
+Job information (1/3)
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed Time limit
+------------------- ------------------- ------------------- ------------------- ---------- ----------
+2022-05-17T13:09:08 2022-05-17T13:09:08 2022-05-17T13:09:09 2022-05-17T13:09:33   00:00:24   00:05:00
+-----------------------------------------------------------------------------------------------------
+
+Job information (2/3)
+-------------------------------------------------------------
+    Username      Account    Partition   NNodes        Energy
+------------ ------------ ------------ -------- -------------
+     hdennys         uzg2        debug        1      1.991 kJ
+
+Job information (3/3) - GPU utilization data
+----------------------------------------------------
+   Node name       Usage      Max mem Execution time
+------------ ----------- ------------ --------------
+    nid04283        17 %      255 MiB       00:00:00
+    nid04283         5 %      255 MiB       00:00:00
+    nid04283         5 %      255 MiB       00:00:00
+    nid04283         4 %      255 MiB       00:00:00
+

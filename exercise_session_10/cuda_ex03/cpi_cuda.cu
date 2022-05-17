@@ -19,9 +19,11 @@ __global__ void cal_pi(double *sum, int nbin, double step, int nthreads, int nbl
 
 // Main routine that executes on the host
 int main(int argc, char *argv[]) {
+	int NUM_BLOCK = 0;
+	int NUM_THREAD = 0;
 	if(argc == 3){
-		int NUM_BLOCK = atoi(argv[1]);
-		int NUM_THREAD = atoi(argv[2]);
+		NUM_BLOCK = atoi(argv[1]);
+		NUM_THREAD = atoi(argv[2]);
 	}
 	else if(argc > 3) {
 		printf("Too many arguments supplied.\n");
@@ -54,7 +56,7 @@ int main(int argc, char *argv[]) {
 
 	// Print results
 	double delta = getTime() - start;
-	printf("Using %d Blocks and $d threads, PI = %.16g computed in %.4g seconds\n", NUM_BLOCK, NUM_THREAD, pi, delta);
+	printf("Using %d Blocks and %d threads, PI = %.16g computed in %.4g seconds\n", NUM_BLOCK, NUM_THREAD, pi, delta);
 	// Cleanup
 	free(sumHost);
 	cudaFree(sumDev);
