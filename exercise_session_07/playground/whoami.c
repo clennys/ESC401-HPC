@@ -19,9 +19,7 @@ int main (int argc, char *argv[])
 		printf("Process %d, received %d from process 2\n", rank, value);
 	
 	}
-
 	
-
 	MPI_Finalize();
 	return 0;
 }

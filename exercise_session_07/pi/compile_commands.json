@@ -1,0 +1,30 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/cc",
+      "-c",
+      "-o",
+      "leibnitz.o",
+      "leibnitz.c"
+    ],
+    "directory": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi",
+    "file": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi/leibnitz.c",
+    "output": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi/leibnitz.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/gcc",
+      "-c",
+      "-I/usr/include/openmpi-x86_64",
+      "-Wl,-rpath",
+      "-Wl,/usr/lib64/openmpi/lib",
+      "-Wl,--enable-new-dtags",
+      "-o",
+      "leibnitz.o",
+      "leibnitz.c"
+    ],
+    "directory": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi",
+    "file": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi/leibnitz.c",
+    "output": "/home/dhuber/University/esc_401_high_performance_computing/exercise_session_07/pi/leibnitz.o"
+  }
+]

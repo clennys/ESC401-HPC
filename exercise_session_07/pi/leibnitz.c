@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "mpi.h"
+#include "/usr/include/openmpi-x86_64/mpi.h"
 
 int main (int argc, char *argv[])
 {
